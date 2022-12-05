@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Eksamen-ClassLibrary\Eksamen-ClassLibrary.csproj" />
+    <ProjectReference Include="..\ClassLibrary\Data Class Library.csproj" />
   </ItemGroup>
 
 </Project>

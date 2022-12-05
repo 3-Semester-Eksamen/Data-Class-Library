@@ -1,6 +1,4 @@
-using Eksamen_ClassLibrary;
-using System.Numerics;
-using System.Xml.Linq;
+using Class_Library;
 
 namespace LibraryUnitTest
 {
