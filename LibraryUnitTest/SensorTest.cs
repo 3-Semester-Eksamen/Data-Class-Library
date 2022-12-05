@@ -16,7 +16,7 @@ namespace LibraryUnitTest
         {
             sensorCorrect.ValidateMacAddress();
             Assert.ThrowsException<ArgumentNullException>(() => sensorMacNull.ValidateMacAddress());
-            Assert.ThrowsException<ArgumentOutOfRangeException> (() => sensorMacTooShort.ValidateMacAddress());
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => sensorMacTooShort.ValidateMacAddress());
         }
 
         [TestMethod]
@@ -24,7 +24,7 @@ namespace LibraryUnitTest
         {
             sensorCorrect.ValidateName();
             Assert.ThrowsException<ArgumentNullException>(() => sensorNameNull.ValidateName());
-            Assert.ThrowsException<ArgumentOutOfRangeException> (() => sensorNameTooShort.ValidateName());
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => sensorNameTooShort.ValidateName());
         }
 
         [TestMethod]

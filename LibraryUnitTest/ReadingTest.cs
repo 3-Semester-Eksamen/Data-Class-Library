@@ -8,7 +8,9 @@ namespace LibraryUnitTest
         Reading readingCorrect = new Reading { Id = 1, MacAddressSensor = "DADWDA", OpenedBy = 1, Time = DateTime.Now.ToString() };
         Reading readingMacNull = new Reading { Id = 2, MacAddressSensor = null, OpenedBy = 1, Time = DateTime.Now.ToString() };
         Reading readingMacTooShort = new Reading { Id = 3, MacAddressSensor = "D", OpenedBy = 1, Time = DateTime.Now.ToString() };
-        Reading readingOpenedTooShort = new Reading { Id = 5, MacAddressSensor = "DADWDA", OpenedBy = -1, Time = DateTime.Now.ToString() };
+        Reading readingOpenedTooShort = new Reading { Id = 4, MacAddressSensor = "DADWDA", OpenedBy = -1, Time = DateTime.Now.ToString() };
+        Reading readingTimeNull = new Reading { Id = 5, MacAddressSensor = "DADWDA", OpenedBy = 1, Time = null };
+
 
         [TestMethod]
         public void ValidateMacAddressSensorTest()

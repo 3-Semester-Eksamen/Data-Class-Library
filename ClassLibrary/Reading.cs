@@ -12,7 +12,7 @@ namespace Class_Library
         public int Id { get; set; }
         public string MacAddressSensor { get; set; }
         public int OpenedBy { get; set; }
-        public string Time = DateTime.Now.ToString();
+        public string Time { get; set; }
 
         public void ValidateMacAddressSensor()
         {
@@ -26,7 +26,6 @@ namespace Class_Library
             if (OpenedBy == null) throw new ArgumentNullException("Feltet må ikke være tomt");
             if (OpenedBy < 0) throw new ArgumentOutOfRangeException("Feltet må ikke være negativt");
         }
-
 
         public void Validate()
         {
