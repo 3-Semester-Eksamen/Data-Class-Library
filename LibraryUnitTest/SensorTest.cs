@@ -1,30 +1,31 @@
-﻿using Class_Library;
+﻿using Data_Class_Library.Classes;
 
 namespace LibraryUnitTest
 {
     [TestClass]
     public class SensorTest
     {
-        Sensor sensorCorrect = new Sensor { MacAddress = "QWERTY", Name = "Sensor1" };
-        Sensor sensorMacNull = new Sensor { MacAddress = null, Name = "Sensor1" };
-        Sensor sensorMacTooShort = new Sensor { MacAddress = "Q", Name = "Sensor1" };
-        Sensor sensorNameNull = new Sensor { MacAddress = "QWERTY", Name = null };
-        Sensor sensorNameTooShort = new Sensor { MacAddress = "QWERTY", Name = "S" };
+
+        readonly Sensor sensorCorrect = new() { MacAddress = "QWERTY", Name = "Sensor1" };
+        readonly Sensor sensorMacNull = new() { MacAddress = null, Name = "Sensor1" };
+        readonly Sensor sensorMacTooShort = new() { MacAddress = "Q", Name = "Sensor1" };
+        readonly Sensor sensorNameNull = new() { MacAddress = "QWERTY", Name = null };
+        readonly Sensor sensorNameTooShort = new() { MacAddress = "QWERTY", Name = "S" };
 
         [TestMethod]
         public void ValidateMacAddress()
         {
-            sensorCorrect.ValidateMacAddress();
-            Assert.ThrowsException<ArgumentNullException>(() => sensorMacNull.ValidateMacAddress());
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => sensorMacTooShort.ValidateMacAddress());
+            sensorCorrect.Validate();
+            Assert.ThrowsException<ArgumentNullException>(() => sensorMacNull.Validate());
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => sensorMacTooShort.Validate());
         }
 
         [TestMethod]
         public void ValidateName()
         {
-            sensorCorrect.ValidateName();
-            Assert.ThrowsException<ArgumentNullException>(() => sensorNameNull.ValidateName());
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => sensorNameTooShort.ValidateName());
+            sensorCorrect.Validate();
+            Assert.ThrowsException<ArgumentNullException>(() => sensorNameNull.Validate());
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => sensorNameTooShort.Validate());
         }
 
         [TestMethod]

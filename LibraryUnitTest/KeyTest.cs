@@ -1,31 +1,31 @@
-using Class_Library;
+using Data_Class_Library.Classes;
 
 namespace LibraryUnitTest
 {
     [TestClass]
     public class KeyTest
     {
-        Key keyCorrect = new Key { Id = 1, Name = "Key1", Email = "Key1@gmail.com", Phone = "12345678" };
-        Key keyNameNull = new Key { Id = 2, Name = null, Email = "Key2@gmail.com", Phone = "12345678" };
-        Key keyNameTooShort = new Key { Id = 3, Name = "Ke", Email = "Key3@gmail.com", Phone = "12345678" };
-        Key keyEmailNull = new Key { Id = 4, Name = "KeyErGod", Email = null, Phone = "123456" };
-        Key keyEmailTooShort = new Key { Id = 5, Name = "KeyErGod", Email = "Em", Phone = "123456" };
-        Key keyPhoneNull = new Key { Id = 6, Name = "KeyErGod", Email = "Email", Phone = null };
-        Key keyPhoneTooShort = new Key { Id = 7, Name = "KeyErGod", Email = "Email", Phone = "12" };
+        readonly Key keyCorrect = new() { Id = 1, Name = "Key1", Email = "Key1@gmail.com", Phone = "12345678" };
+        readonly Key keyNameNull = new() { Id = 2, Name = null, Email = "Key2@gmail.com", Phone = "12345678" };
+        readonly Key keyNameTooShort = new() { Id = 3, Name = "Ke", Email = "Key3@gmail.com", Phone = "12345678" };
+        readonly Key keyEmailNull = new() { Id = 4, Name = "KeyErGod", Email = null, Phone = "123456" };
+        readonly Key keyEmailTooShort = new() { Id = 5, Name = "KeyErGod", Email = "Em", Phone = "123456" };
+        readonly Key keyPhoneNull = new() { Id = 6, Name = "KeyErGod", Email = "Email", Phone = null };
+        readonly Key keyPhoneTooShort = new() { Id = 7, Name = "KeyErGod", Email = "Email", Phone = "12" };
 
         [TestMethod]
         public void ValidateName()
         {
-            keyCorrect.ValidateName();
-            Assert.ThrowsException<ArgumentNullException>(() => keyNameNull.ValidateName());
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => keyNameTooShort.ValidateName());
+            keyCorrect.Validate();
+            Assert.ThrowsException<ArgumentNullException>(() => keyNameNull.Validate());
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => keyNameTooShort.Validate());
         }
 
         [TestMethod]
         public void ValidateEmail()
         {
-            Assert.ThrowsException<ArgumentNullException>(() => keyEmailNull.ValidateEmail());
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => keyEmailTooShort.ValidateEmail());
+            Assert.ThrowsException<ArgumentNullException>(() => keyEmailNull.Validate());
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => keyEmailTooShort.Validate());
         }
 
         [TestMethod]
