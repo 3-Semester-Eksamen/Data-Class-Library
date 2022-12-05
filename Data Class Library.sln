@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data Class Library", "Data Class Library.csproj", "{9C60293B-BCAF-4FEE-9D2A-4EDAE23FAA80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data Class LibraryTests", "..\Data Class LibraryTests\Data Class LibraryTests.csproj", "{BB6A83A3-786A-44C7-BE9A-32A5AE682C82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C60293B-BCAF-4FEE-9D2A-4EDAE23FAA80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C60293B-BCAF-4FEE-9D2A-4EDAE23FAA80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C60293B-BCAF-4FEE-9D2A-4EDAE23FAA80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C60293B-BCAF-4FEE-9D2A-4EDAE23FAA80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB6A83A3-786A-44C7-BE9A-32A5AE682C82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB6A83A3-786A-44C7-BE9A-32A5AE682C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB6A83A3-786A-44C7-BE9A-32A5AE682C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB6A83A3-786A-44C7-BE9A-32A5AE682C82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {762E96C8-DC9F-483C-948D-607FEA5723D8}
+	EndGlobalSection
+EndGlobal
