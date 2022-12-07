@@ -9,7 +9,8 @@ using System.Xml.Linq;
 
 namespace Class_Library
 {
-    public class Reading
+    public class Reading 
+    { 
     
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
