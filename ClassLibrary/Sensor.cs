@@ -1,8 +1,14 @@
-﻿namespace Class_Library
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace Class_Library
 {
     public class Sensor
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string MacAddress { get; set; }
+        [Required]
         public string Name { get; set; }
 
         public void ValidateMacAddress()
