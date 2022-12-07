@@ -6,10 +6,13 @@ namespace LibraryUnitTest
     public class ReadingTest
     {
 
-        readonly Reading readingCorrect = new() { Id = 1, MacAddressSensor = "DADWDA", OpenedBy = 1, Time = DateTime.Now.ToString() };
-        readonly Reading readingMacNull = new() { Id = 2, MacAddressSensor = null, OpenedBy = 1, Time = DateTime.Now.ToString() };
-        readonly Reading readingMacTooShort = new() { Id = 3, MacAddressSensor = "D", OpenedBy = 1, Time = DateTime.Now.ToString() };
-        readonly Reading readingOpenedTooShort = new() { Id = 4, MacAddressSensor = "DADWDA", OpenedBy = -1, Time = DateTime.Now.ToString() };
+        readonly Reading readingCorrect = new() { Id = 1, MacAddressSensor = "1234", OpenedBy = 1, Time = DateTime.Now.ToString() };
+        
+        readonly Reading readingMacNull = new() { Id = 1, MacAddressSensor = null, OpenedBy = 1, Time = DateTime.Now.ToString() };
+        readonly Reading readingMacTooShort = new() { Id = 1, MacAddressSensor = "123", OpenedBy = 1, Time = DateTime.Now.ToString() };
+        
+        readonly Reading readingOpenedTooShort = new() { Id = 1, MacAddressSensor = "1234", OpenedBy = 0, Time = DateTime.Now.ToString() };
+        readonly Reading readingOpenedNull = new() { Id = 1, MacAddressSensor = "1234", OpenedBy = null, Time = DateTime.Now.ToString() };
 
         [TestMethod]
         public void ValidateMacAddressSensorTest()
@@ -19,16 +22,11 @@ namespace LibraryUnitTest
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => readingMacTooShort.Validate());
         }
 
-        public void OpenedBy(int openedBy)
-        {
-            readingCorrect.OpenedBy = openedBy;
-            readingCorrect.Validate();
-        }
-
         [TestMethod]
         public void ValidateOpenedByTest()
         {
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => readingOpenedTooShort.Validate());
+            Assert.ThrowsException<ArgumentNullException>(() => readingOpenedNull.Validate());
         }
 
         [TestMethod]
@@ -45,7 +43,7 @@ namespace LibraryUnitTest
         {
             readingCorrect.Time = "04/12/2022 16.00.00";
             string str = readingCorrect.ToString();
-            Assert.AreEqual("{Id=1, MacAddressSensor=DADWDA, OpenedBy=1, Time=04/12/2022 16.00.00}", str);
+            Assert.AreEqual("{Id=1, MacAddressSensor=1234, OpenedBy=1, Time=04/12/2022 16.00.00}", str);
         }
     }
 }

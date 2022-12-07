@@ -6,11 +6,23 @@ namespace LibraryUnitTest
     public class SensorTest
     {
 
-        readonly Sensor sensorCorrect = new() { MacAddress = "QWERTY", Name = "Sensor1" };
-        readonly Sensor sensorMacNull = new() { MacAddress = null, Name = "Sensor1" };
-        readonly Sensor sensorMacTooShort = new() { MacAddress = "Q", Name = "Sensor1" };
-        readonly Sensor sensorNameNull = new() { MacAddress = "QWERTY", Name = null };
-        readonly Sensor sensorNameTooShort = new() { MacAddress = "QWERTY", Name = "S" };
+        readonly Sensor sensorCorrect = new() { Id = 1, MacAddress = "1234", Name = "1234" };
+
+        readonly Sensor sensorIdInvalid = new() { Id = 0, MacAddress = "1234", Name = "1234" };
+
+        readonly Sensor sensorMacNull = new() { Id = 1, MacAddress = null, Name = "1234" };
+        readonly Sensor sensorMacTooShort = new() { Id = 1, MacAddress = "123", Name = "1234" };
+
+        readonly Sensor sensorNameNull = new() { Id = 1, MacAddress = "1234", Name = null };
+        readonly Sensor sensorNameTooShort = new() { Id = 1, MacAddress = "1234", Name = "123" };
+
+
+        [TestMethod]
+        public void ValidateIdTest()
+        {
+            sensorCorrect.Validate();
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => sensorIdInvalid.Validate());
+        }
 
         [TestMethod]
         public void ValidateMacAddress()
@@ -42,7 +54,7 @@ namespace LibraryUnitTest
         public void ToStringTest()
         {
             string str = sensorCorrect.ToString();
-            Assert.AreEqual("{MacAddress=QWERTY, Name=Sensor1}", str);
+            Assert.AreEqual("{MacAddress=1234, Name=1234}", str);
         }
     }
 }

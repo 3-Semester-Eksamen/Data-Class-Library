@@ -17,7 +17,7 @@ namespace Data_Class_Library.Classes
         /// <summary>
         /// Id of the Key.
         /// </summary>
-        public int? Id { get; set; }
+        public int Id { get; set; } = 0;
         /// <summary>
         /// Name of the Key.
         /// </summary>
@@ -60,8 +60,8 @@ namespace Data_Class_Library.Classes
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         private void ValidateName()
         {
-            if (string.IsNullOrWhiteSpace(Name)) throw new ArgumentNullException("Name cannot be null or empty.");
-            if (Name.Length < 3) throw new ArgumentOutOfRangeException("Name has to be atleast 4 characters.");
+            if (string.IsNullOrEmpty(Name)) throw new ArgumentNullException("Name cannot be null or empty.");
+            if (Name.Length < 4) throw new ArgumentOutOfRangeException("Name has to be atleast 4 characters.");
         }
         /// <summary>
         /// Method that validates the Email.
@@ -70,8 +70,8 @@ namespace Data_Class_Library.Classes
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         private void ValidateEmail()
         {
-            if (string.IsNullOrWhiteSpace(Email)) throw new ArgumentNullException("Email cannot be null or empty.");
-            if (Email.Length < 3) throw new ArgumentOutOfRangeException("Email has to be atleast 4 characters.");
+            if (string.IsNullOrEmpty(Email)) throw new ArgumentNullException("Email cannot be null or empty.");
+            if (Email.Length < 4) throw new ArgumentOutOfRangeException("Email has to be atleast 4 characters.");
         }
         /// <summary>
         /// Method that validates the PhoneNumber
@@ -80,8 +80,8 @@ namespace Data_Class_Library.Classes
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public void ValidatePhone()
         {
-            if (string.IsNullOrWhiteSpace(Phone)) throw new ArgumentNullException("Phone number cannot be null or empty.");
-            if (Phone.Length < 3) throw new ArgumentOutOfRangeException("Phone number has to be atleast 4 characters.");
+            if (string.IsNullOrEmpty(Phone)) throw new ArgumentNullException("Phone number cannot be null or empty.");
+            if (Phone.Length < 4) throw new ArgumentOutOfRangeException("Phone number has to be atleast 4 characters.");
         }
         #endregion
         public override string ToString()

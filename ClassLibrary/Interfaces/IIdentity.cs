@@ -14,6 +14,6 @@ namespace Data_Class_Library.Interfaces
         /// <summary>
         /// Id for class.
         /// </summary>
-        int? Id { get; set; }
+        int Id { get; set; }
     }
 }

@@ -10,11 +10,13 @@ namespace Data_Class_Library.Classes
     public class Sensor : IIdentity, IValidate
     {
 
+
+
         #region Properties
         /// <summary>
         /// Id of the Sensor.
         /// </summary>
-        public int? Id { get; set; }
+        public int Id { get; set; } = 0;
         /// <summary>
         /// MacAddress of the Sensor.
         /// </summary>
@@ -28,7 +30,6 @@ namespace Data_Class_Library.Classes
         #region Constructor
         public Sensor()
         {
-
         }
         #endregion
 
@@ -40,11 +41,20 @@ namespace Data_Class_Library.Classes
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         public void Validate()
         {
+            ValidateId();
             ValidateMacAddress();
             ValidateName();
         }
 
         #region Validator Methods
+        /// <summary>
+        /// Method that validates the Id.
+        /// </summary>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
+        private void ValidateId()
+        {
+            if (Id < 1) throw new ArgumentOutOfRangeException("Id has to be atleast 1.");
+        }
         /// <summary>
         /// Method that validates the MacAdress.
         /// </summary>
@@ -52,8 +62,8 @@ namespace Data_Class_Library.Classes
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         private void ValidateMacAddress()
         {
-            if (string.IsNullOrWhiteSpace(MacAddress)) throw new ArgumentNullException("MacAddresse må ikke være tom");
-            if (MacAddress.Length <= 2) throw new ArgumentOutOfRangeException("MacAddresse skal være længere end 2 karakterer lang" + MacAddress);
+            if (string.IsNullOrEmpty(MacAddress)) throw new ArgumentNullException("MacAddress cannot be null or empty.");
+            if (MacAddress.Length < 4) throw new ArgumentOutOfRangeException("MacAddress has to be atleast 4 characters.");
         }
         /// <summary>
         /// Method that validates the Name.
@@ -62,8 +72,8 @@ namespace Data_Class_Library.Classes
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         private void ValidateName()
         {
-            if (string.IsNullOrWhiteSpace(Name)) throw new ArgumentNullException("Navnet må ikke være tomt");
-            if (Name.Length <= 2) throw new ArgumentOutOfRangeException("Navnet skal være længere end 2 karakterer langt");
+            if (string.IsNullOrWhiteSpace(Name)) throw new ArgumentNullException("Name cannot be null or empty.");
+            if (Name.Length < 4) throw new ArgumentOutOfRangeException("Name has to be atleast 4 characters.");
         }
         #endregion
 
@@ -73,17 +83,5 @@ namespace Data_Class_Library.Classes
         }
         #endregion
 
-        /*
-                
-
-                
-
-                public void Validate()
-                {
-                    ValidateMacAddress();
-                    ValidateName();
-                }
-
-                */
     }
 }

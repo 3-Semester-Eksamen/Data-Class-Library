@@ -15,7 +15,7 @@ namespace Data_Class_Library.Classes
         /// <summary>
         /// Id of the Reading.
         /// </summary>
-        public int? Id { get; set; }
+        public int Id { get; set; } = 0;
         /// <summary>
         /// MacAddress of the Sensor of the Reading.
         /// </summary>
@@ -57,8 +57,8 @@ namespace Data_Class_Library.Classes
         private void ValidateMacAddressSensor()
         {
 
-            if (string.IsNullOrWhiteSpace(MacAddressSensor)) throw new ArgumentNullException("MacAddress cannot be null or empty.");
-            if (MacAddressSensor.Length < 3) throw new ArgumentOutOfRangeException("MacAddress has to be atleast 4 characters.");
+            if (string.IsNullOrEmpty(MacAddressSensor)) throw new ArgumentNullException("MacAddress cannot be null or empty.");
+            if (MacAddressSensor.Length < 4) throw new ArgumentOutOfRangeException("MacAddress has to be atleast 4 characters.");
         }
         /// <summary>
         /// Method that validates the OpenedBy
@@ -68,7 +68,7 @@ namespace Data_Class_Library.Classes
         private void ValidateOpenedBy()
         {
             if (OpenedBy == null) throw new ArgumentNullException("OpenedBy cannot be null.");
-            if (OpenedBy < 0) throw new ArgumentOutOfRangeException("OpenedBy has to be atleast 1.");
+            if (OpenedBy < 1) throw new ArgumentOutOfRangeException("OpenedBy has to be atleast 1.");
         }
         #endregion
         public override string ToString()
