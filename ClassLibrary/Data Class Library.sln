@@ -5,9 +5,7 @@ VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data Class Library", "Data Class Library.csproj", "{9C60293B-BCAF-4FEE-9D2A-4EDAE23FAA80}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryUnitTest", "..\LibraryUnitTest\LibraryUnitTest.csproj", "{1A8A4563-0D6D-4335-AA91-82B758764B2C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data Class LibraryTests", "..\Data Class LibraryTests\Data Class LibraryTests.csproj", "{1EE8165B-0602-44E1-8226-9652B1EEE326}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data Class LibraryTests", "..\Data Class LibraryTests\Data Class LibraryTests.csproj", "{1EE8165B-0602-44E1-8226-9652B1EEE326}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{9C60293B-BCAF-4FEE-9D2A-4EDAE23FAA80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C60293B-BCAF-4FEE-9D2A-4EDAE23FAA80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C60293B-BCAF-4FEE-9D2A-4EDAE23FAA80}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1A8A4563-0D6D-4335-AA91-82B758764B2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A8A4563-0D6D-4335-AA91-82B758764B2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A8A4563-0D6D-4335-AA91-82B758764B2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A8A4563-0D6D-4335-AA91-82B758764B2C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1EE8165B-0602-44E1-8226-9652B1EEE326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1EE8165B-0602-44E1-8226-9652B1EEE326}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EE8165B-0602-44E1-8226-9652B1EEE326}.Release|Any CPU.ActiveCfg = Release|Any CPU

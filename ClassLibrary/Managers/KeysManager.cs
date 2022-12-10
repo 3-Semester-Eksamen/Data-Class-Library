@@ -27,10 +27,6 @@ namespace Data_Class_Library.Managers
         #endregion
 
         #region Constructor
-
-        #endregion
-
-        #region Methods
         /// <summary>
         /// Default Constructor with no custom behaviour.
         /// </summary>
@@ -38,14 +34,10 @@ namespace Data_Class_Library.Managers
         {
 
         }
-        /// <summary>
-        /// Constructor where a collection of Keys can be added alongside the creation.
-        /// </summary>
-        /// <param name="keys">Collection of Keys</param>
-        public KeysManager(List<Key> keys)
-        {
+        #endregion
 
-        }
+        #region Methods
+
         #endregion
 
 

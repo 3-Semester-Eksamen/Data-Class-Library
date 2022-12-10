@@ -109,7 +109,7 @@ namespace Data_Class_Library.Managers
         /// <param name="id">Id to delete.</param>
         /// <returns>Deleted object.</returns>
         /// <exception cref="KeyNotFoundException">An exception is thrown, if the key does NOT exist.</exception>
-        public T? Delete(int id)
+        public T Delete(int id)
         {
 
             if (Values.ContainsKey(id))
